@@ -1,0 +1,13 @@
+[Unit]
+Description=Dhan postback receiver
+After=network.target
+
+[Service]
+# Adjust User and paths to match your server
+User=user
+WorkingDirectory=/home/user/pomi
+ExecStart=/home/user/pomi/.venv/bin/python postback_server.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
